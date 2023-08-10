@@ -1,6 +1,5 @@
 # Swapping using a third variable
     
-
 a = int(input("Enter First Number : "))
 b = int(input("Enter Second number : "))
 temp = a
