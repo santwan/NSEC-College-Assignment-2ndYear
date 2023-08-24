@@ -1,16 +1,15 @@
 #include <stdio.h>
 
+#define MAX_SIZE 100
+
+int array[MAX_SIZE] ;
+
 int main() {
-  int array[100], n, position, element, i;
+   int n, position, element, i ;
 
   // Get the size of the array
   printf("Enter the size of the array: ");
   scanf("%d", &n);
-
-  // Initialize the array
-  for (i = 0; i < n; i++) {
-    array[i] = 0;
-  }
 
   // Display the menu
   printf("\n\n1. Insert element\n2. Delete element\n3. Display array\n4. Exit\n");
@@ -29,17 +28,17 @@ int main() {
         scanf("%d", &element);
         printf("\nEnter the position where the element should be inserted: ");
         scanf("%d", &position);
-        insertElement(array, n, position, element);
+        insertElement(n, position, element);
         break;
       case 2:
         // Delete element
         printf("\nEnter the position of the element to be deleted: ");
         scanf("%d", &position);
-        deleteElement(array, n, position);
+        deleteElement(n, position);
         break;
       case 3:
         // Display array
-        displayArray(array, n);
+        displayArray( n );
         break;
       case 4:
         // Exit
@@ -55,7 +54,7 @@ int main() {
 }
 
 // Function to insert element at any position in the array
-void insertElement(int array[], int n, int position, int element) {
+void insertElement(int n, int position, int element) {
   // Check if the position is valid
   if (position < 0 || position > n) {
     printf("\nInvalid position.\n");
@@ -75,7 +74,7 @@ void insertElement(int array[], int n, int position, int element) {
 }
 
 // Function to delete element from any position in the array
-void deleteElement(int array[], int n, int position) {
+void deleteElement(int n, int position) {
   // Check if the position is valid
   if (position < 0 || position >= n) {
     printf("\nInvalid position.\n");
@@ -92,8 +91,8 @@ void deleteElement(int array[], int n, int position) {
 }
 
 // Function to display the array
-void displayArray(int array[], int n) {
-  // Check if the array is empty
+void displayArray(int n) {
+  // Check if the array is empty or not
   if (n == 0) {
     printf("\nArray is empty.\n");
     return;
